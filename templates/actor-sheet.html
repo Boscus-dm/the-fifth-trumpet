@@ -1,0 +1,67 @@
+<section class="tft-character-sheet">
+    <header class="tft-sheet-header">
+        <input class="tft-character-name" name="name" type="text" value="{{actor.name}}" placeholder="Character Name">
+    </header>
+    <section class="tft-section">
+        <h2>Resources</h2>
+        <div class="tft-damage-tracks">
+            {{#each damageTracks as |track|}}
+                <section class="tft-damage-track">
+                    <h3>{{track.label}}</h3>
+                    <div class="tft-damage-track-controls">
+                        <button type="button" class="tft-damage-adjust" data-action="damage-adjust" data-track="{{track.key}}" data-adjust="decrease" aria-label="Decrease {{track.label}} maximum" title="Decrease maximum">−</button>
+                        <div class="tft-damage-boxes">
+                            {{#each track.boxes as |box|}}
+                                <button type="button" class="tft-damage-box is-{{box.state}}" data-action="damage-box" data-track="{{track.key}}" data-index="{{box.index}}" aria-label="{{box.trackLabel}} box {{box.number}}, {{box.state}}" title="{{box.trackLabel}} {{box.number}}: {{box.state}}">{{box.marker}}</button>
+                            {{/each}}
+                        </div>
+                        <button type="button" class="tft-damage-adjust" data-action="damage-adjust" data-track="{{track.key}}" data-adjust="increase" aria-label="Increase {{track.label}} maximum" title="Increase maximum">+</button>
+                    </div>
+                    <div class="tft-damage-summary">
+                        <span>Superficial: {{track.superficial}}</span>
+                        <span>Aggravated: {{track.aggravated}}</span>
+                    </div>
+                </section>
+            {{/each}}
+        </div>
+    </section>
+    <section class="tft-section">
+        <h2>Attributes</h2>
+        <div class="tft-attribute-grid">
+            {{#each attributeCategories as |category|}}
+                <section class="tft-panel">
+                    <div class="tft-category-header">
+                        <h3>{{category.label}}</h3>
+                        <input class="tft-category-highest" type="number" value="{{category.highestValue}}" readonly tabindex="-1" aria-label="{{category.label}} highest attribute value" title="Highest value in {{category.label}}">
+                    </div>
+                    <div class="tft-field-list">
+                        {{#each category.attributes as |attribute|}}
+                            <label class="tft-field">
+                                <span>{{attribute.label}}</span>
+                                <input type="number" name="{{attribute.path}}" value="{{attribute.value}}" min="0" step="1">
+                            </label>
+                        {{/each}}
+                    </div>
+                </section>
+            {{/each}}
+        </div>
+    </section>
+    <section class="tft-section">
+        <h2>Skills</h2>
+        <section class="tft-panel tft-skills-panel">
+            {{#each skillGroups as |group|}}
+                <div class="tft-skill-group {{#unless group.wide}}tft-combat-related{{/unless}}">
+                    <h3>{{group.label}}</h3>
+                    <div class="tft-field-list tft-skill-list {{#unless group.wide}}tft-combat-related-list{{/unless}}">
+                        {{#each group.skills as |skill|}}
+                            <label class="tft-field">
+                                <span>{{skill.label}}</span>
+                                <input type="number" name="{{skill.path}}" value="{{skill.value}}" min="0" step="1">
+                            </label>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/each}}
+        </section>
+    </section>
+</section>

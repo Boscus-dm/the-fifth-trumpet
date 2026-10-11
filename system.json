@@ -1,0 +1,43 @@
+{
+  "id": "the-fifth-trumpet",
+  "title": "The Fifth Trumpet",
+  "description": "A fan-made tabletop roleplaying system.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.368"
+  },
+  "authors": [
+    {
+      "name": "Boscus",
+      "url": "https://github.com/Boscus-dm"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/system.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "Character": {},
+      "NPC": {},
+      "Distortion": {},
+      "Abnormality": {}
+    },
+    "Item": {
+      "Weapon": {},
+      "Armor": {},
+      "Item": {},
+      "Status Effect": {}
+    }
+  }
+}

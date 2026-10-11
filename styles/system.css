@@ -1,0 +1,239 @@
+.the-fifth-trumpet .tft-character-sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: .75rem;
+}
+
+.the-fifth-trumpet .tft-character-name {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.the-fifth-trumpet .tft-section h2 {
+    border-bottom: 1px solid rgba(128,128,128,.5);
+    padding-bottom: .35rem;
+    margin-bottom: .65rem;
+}
+
+.the-fifth-trumpet .tft-attribute-grid,
+.the-fifth-trumpet .tft-skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+}
+
+.the-fifth-trumpet .tft-panel {
+    border: 1px solid rgba(128,128,128,.45);
+    border-radius: 6px;
+    padding: .65rem;
+    min-width: 0;
+}
+
+.the-fifth-trumpet .tft-panel h3 {
+    margin: 0 0 .65rem;
+}
+
+.the-fifth-trumpet .tft-panel-wide {
+    grid-column: 1 / -1;
+}
+
+.the-fifth-trumpet .tft-field-list {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.the-fifth-trumpet .tft-skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.the-fifth-trumpet .tft-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+.the-fifth-trumpet .tft-field input {
+    width: 3.5rem;
+    min-width: 0;
+    text-align: center;
+}
+
+.the-fifth-trumpet .tft-resource-summary {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 580px) {
+    .the-fifth-trumpet .tft-attribute-grid,
+    .the-fifth-trumpet .tft-skill-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .the-fifth-trumpet .tft-panel-wide {
+        grid-column: auto;
+    }
+}
+
+.the-fifth-trumpet .window-content {
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.the-fifth-trumpet .tft-skills-panel {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.the-fifth-trumpet .tft-combat-related {
+    border-top: 2px solid rgba(128,128,128,.65);
+    padding-top: .75rem;
+}
+
+.the-fifth-trumpet .tft-combat-related h3 {
+    margin-bottom: .65rem;
+}
+
+.the-fifth-trumpet .tft-combat-related-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.the-fifth-trumpet .tft-damage-tracks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.the-fifth-trumpet .tft-damage-track {
+    min-width: 0;
+    padding: 0.6rem;
+    border: 1px solid var(--color-border-light-2, #777);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.the-fifth-trumpet .tft-damage-track h3 {
+    margin: 0 0 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.the-fifth-trumpet .tft-damage-track-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-width: 0;
+}
+
+.the-fifth-trumpet .tft-damage-adjust {
+    flex: 0 0 28px;
+    width: 28px;
+    min-width: 28px;
+    height: 30px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #655846;
+    border-radius: 2px;
+    background: #fff0c7;
+    color: #211a12;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.the-fifth-trumpet .tft-damage-boxes {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    gap: 3px;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 2px 0;
+    scrollbar-width: thin;
+}
+
+.the-fifth-trumpet .tft-damage-box {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex: 0 0 30px;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid #655846;
+    border-radius: 1px;
+    background: #fff0c7;
+    color: #211a12;
+    font-family: var(--font-primary, serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.the-fifth-trumpet .tft-damage-box.is-empty {
+    color: transparent;
+}
+
+.the-fifth-trumpet .tft-damage-box.is-superficial,
+.the-fifth-trumpet .tft-damage-box.is-aggravated {
+    color: #211a12;
+}
+
+.the-fifth-trumpet .tft-damage-box:hover,
+.the-fifth-trumpet .tft-damage-adjust:hover {
+    border-color: #211a12;
+    filter: brightness(0.94);
+}
+
+.the-fifth-trumpet .tft-damage-summary {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    margin-top: 0.45rem;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    .the-fifth-trumpet .tft-damage-tracks {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.the-fifth-trumpet .tft-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.the-fifth-trumpet .tft-category-header h3 {
+    margin: 0;
+    min-width: 0;
+}
+
+.the-fifth-trumpet .tft-category-highest {
+    box-sizing: border-box;
+    flex: 0 0 3.5rem;
+    width: 3.5rem;
+    min-width: 0;
+    height: 1.8rem;
+    margin: 0;
+    padding: 0.1rem 0.2rem;
+    text-align: center;
+    font-weight: 700;
+    cursor: default;
+    opacity: 1;
+}
